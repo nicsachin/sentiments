@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sentiments</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <style>
+        .positive
+        {
+            color:green;
+        }
+        .negative
+        {
+            color:red;
+        }
+         body
+         {
+            background-color: dodgerblue;
+         }
+        .jumbotron
+        {
+            margin-top:2em;
+        }
+        input[type="text"]
+        {
+            width:30%;
+        }
+    </style>
+</head>
+<body>
+   <div class="jumbotron container text-center">
+       <h2> SENTIMENTS ANALYZER</h2>
+
+       <form action="/" method="get">
+          <div class="form-group">
+              <label for="email"><h3>Enter a string:</h3></label>
+              <input type="text" class="text" name="query">
+          </div>
+
+          <button type="submit" class="btn btn-default">Analyze</button>
+      </form>
+  </div>
+  <div class="jumbotron container text-center">
+      <u><h2>"<%=query%>"</h2></u>
+       <h2 class="positive">Positive words => <%=positive%></h2>
+
+       <h2 class="negative">Negative words => <%=negative%></h2>
+           <%
+         if(positive.length>negative.length)
+         {
+           %> <h3>sounds like sentiments are positive </h3>
+       <%}
+        else if(positive.length==negative.length){
+  %> <h3>sounds like sentiments are negative</h3>
+      <%}%>
+  </div>
+</body>
+</html>
