@@ -13,5 +13,5 @@ const result = sentiment.analyze(req.query.query)
     res.render('index',{query:req.query.query,positive:result.positive,negative:result.negative})
 })
 
-const port = process.env.PORT || 3001
+const port = process.env.PORT || 3000
 app.listen(port,()=>console.log('server started'))
